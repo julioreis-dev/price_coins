@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}Highcharts{% endblock %}
+
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+
+</head>
+<body>
+{% block content %}
+<section class="section page-title">
+  <div id="container"></div>
+      <script src="https://code.highcharts.com/highcharts.src.js"></script>
+          <script>
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Relatório de indices da cotação do {{ coin }}'
+                },
+                subtitle: {
+                    text: 'Consulta realizada em {{ current }}.'
+                },
+                xAxis: {
+                    categories: {{ dates|safe }}
+                },
+                series: [{
+                    name: '{{ coin }}',
+                    data: {{ val }},
+                    color: 'blue'
+                }]
+            });
+          </script>
+</section>
+{% endblock %}
+</body>
+</html>
