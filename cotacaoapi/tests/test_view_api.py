@@ -38,5 +38,5 @@ class MixViewSetTest(TestCase):
         self.client = Client()
 
     def test_api(self):
-        response = self.client.get(f'/api/result/{str(self.coin)}&{str(self.date)}/')
+        response = self.client.get(f'/api/result/coin={str(self.coin)}&date={str(self.date)}/')
         self.assertEqual(response.status_code, 200)
