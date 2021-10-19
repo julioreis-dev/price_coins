@@ -10,6 +10,7 @@
   ================================================== -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -60,7 +61,7 @@
 						<!-- Title -->
 						<div class="faq-item-title">
 						</div>
-                        <div class="container ">
+                        <div class="container">
                             <div class="card-body">
                                 <form action="/new/" method="post" enctype="multipart/form-data">
                                     {% csrf_token %}
@@ -88,8 +89,9 @@
                                             <option value="EUR">Euro</option>
                                             <option value="JPY">Iene</option>
                                           </select>
-                                        </div>
-                                            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+                                        </div >
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+<!--                                            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>-->
                                         </div>
                                 </form>
                             </div>
@@ -99,7 +101,6 @@
 			</div>
 		</div>
 	</div>
-
 </section>
 {% endblock %}
   <!-- JAVASCRIPTS -->

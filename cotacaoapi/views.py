@@ -21,7 +21,7 @@ class CoinViewSet(APIView):
         except Cotacoes.DoesNotExist:
             raise Http404
 
-    def get(self, request, name):
+    def get(self, name):
         coin = self.get_object(name)
         serializer = CotacaoSerializer(coin, many=True)
         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
@@ -36,7 +36,7 @@ class DateViewSet(APIView):
         except Cotacoes.DoesNotExist:
             raise Http404
 
-    def get(self, request, date, format=None):
+    def get(self, request, date):
         date = self.get_object(date)
         serializer = CotacaoSerializer(date, many=True)
         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
