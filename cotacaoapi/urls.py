@@ -10,7 +10,7 @@ router.register('cotacao', CotacaoViewSet, basename='cotacao')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('coin/<str:name>/', CoinViewSet.as_view(), name='coin'),
-    path('date/<str:date>/', DateViewSet.as_view(), name='date'),
-    path('result/<str:name>&<str:date>/', MixViewSet.as_view(), name='mix'),
+    path('coin/<str:name>/', CoinViewSet.as_view(), name='apicoin'),
+    path('date/<str:date>/', DateViewSet.as_view(), name='apidate'),
+    path('result/<str:name>&<str:date>/', MixViewSet.as_view(), name='apimix'),
     ]
