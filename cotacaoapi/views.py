@@ -21,7 +21,7 @@ class CoinViewSet(APIView):
         except Cotacoes.DoesNotExist:
             raise Http404
 
-    def get(self, name):
+    def get(self,  request, name, format=None):
         coin = self.get_object(name)
         serializer = CotacaoSerializer(coin, many=True)
         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
