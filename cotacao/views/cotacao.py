@@ -7,6 +7,11 @@ from multiprocessing.dummy import Pool as ThreadPool
 
 
 def upload_cotation(request):
+    """
+    Function with responsibility of upload whole information requested by user
+    :param request: request
+    :return: template
+    """
     if request.method == 'POST':
         form = CotacoesForm(request.POST)
         if form.is_valid():
