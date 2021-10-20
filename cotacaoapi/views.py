@@ -8,11 +8,19 @@ from django.http import Http404
 
 
 class CotacaoViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    This class return all register in database
+    :return: json
+    """
     serializer_class = CotacaoSerializer
     queryset = Cotacoes.objects.all()
 
 
 class CoinViewSet(APIView):
+    """
+    This class return all register in database by coin
+    :return:json
+    """
     serializer_class = CotacaoSerializer
 
     def get_object(self, name):
@@ -28,6 +36,10 @@ class CoinViewSet(APIView):
 
 
 class DateViewSet(APIView):
+    """
+    This class return all register in database by date
+    :return:json
+    """
     serializer_class = CotacaoSerializer
 
     def get_object(self, date):
@@ -44,6 +56,10 @@ class DateViewSet(APIView):
 
 
 class MixViewSet(APIView):
+    """
+    This class return all register in database by coin and date
+    :return:json
+    """
     serializer_class = CotacaoSerializer
 
     def get_object(self, name, date):
