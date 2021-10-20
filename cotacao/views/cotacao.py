@@ -67,22 +67,3 @@ def upload_cotation(request):
         else:
             form = CotacoesForm()
         return render(request, 'dashboard/coins.html', {'form': form})
-
-    # if request.method == 'POST':
-    #     form = CotacoesForm(request.POST)
-    #     if form.is_valid():
-    #         info = Information()
-    #         date = form.cleaned_data['date']
-    #         coin = form.cleaned_data['coin']
-    #         for day in range(0, 6):
-    #             data_atual = date - timedelta(days=day)
-    #             thread = Thread(target=info.transaction, args=(data_atual,))
-    #             thread.start()
-    #         time.sleep(2)
-    #         dataset = dataview(date, coin)
-    #         current_time = datetime.now().date()
-    #         return render(request, 'dashboard/chart.html', {'dates': dataset[0], 'val': dataset[1],
-    #                                                         'coin': coin, 'current': current_time})
-    #     else:
-    #         form = CotacoesForm()
-    #     return render(request, 'dashboard/coins.html', {'form': form})
