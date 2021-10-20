@@ -18,17 +18,3 @@ def dataview(data:timedelta, country:str) -> json:
     date_reversed = list(reversed(list_date))
     values_reversed = list(reversed(list_values))
     return json.dumps(date_reversed, default=str), json.dumps(values_reversed)
-
-# def dataview(request):
-#     chart_data = [
-#         {
-#             'name': 'sobreviveram',
-#             'data': [136, 87, 119]
-#         },
-#         {
-#             'name': 'sobreviveram',
-#             'data': [80, 97, 372]
-#         }
-#     ]
-#     Javascript(f'window.charData={json.dumps(chart_data)};')
-#     return render(request, 'dashboard/chart.html', {'dataset': chart_data})
