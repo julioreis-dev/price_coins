@@ -10,7 +10,7 @@ def dataview(data: timedelta, country: str) -> json:
     while len(list_date) < 5:
         data_atual = data - timedelta(days=number_day)
         dataset = Cotacoes.objects.filter(date=data_atual, coin=country).first()
-        if dataset != None:
+        if dataset is not None:
             list_date.append(dataset.date)
             list_values.append(dataset.values)
         number_day += 1
