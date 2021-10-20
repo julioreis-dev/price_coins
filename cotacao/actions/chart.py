@@ -3,8 +3,7 @@ from cotacao.models.cotacaomodel import Cotacoes
 from datetime import timedelta
 
 
-
-def dataview(data:timedelta, country:str) -> json:
+def dataview(data: timedelta, country: str) -> json:
     number_day = 0
     list_date = []
     list_values = []
@@ -14,7 +13,7 @@ def dataview(data:timedelta, country:str) -> json:
         if dataset != None:
             list_date.append(dataset.date)
             list_values.append(dataset.values)
-        number_day +=1
+        number_day += 1
     date_reversed = list(reversed(list_date))
     values_reversed = list(reversed(list_values))
     return json.dumps(date_reversed, default=str), json.dumps(values_reversed)
