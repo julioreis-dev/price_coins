@@ -12,6 +12,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('coin/<str:name>/', CoinViewSet.as_view(), name='apicoin'),
     path('date/<str:date>/', DateViewSet.as_view(), name='apidate'),
-    path('result/coin=<str:name>&date=<str:date>/', MixViewSet.as_view(), name='apimix'),
-    # path('result&coin=<str:name>&date=<str:date>/', MixViewSet.as_view(), name='apimix'),
+    # path('result/coin=<str:name>&date=<str:date>/', MixViewSet.as_view(), name='apimix'),
+    path('result&coin=<str:name>&date=<str:date>/', MixViewSet.as_view(), name='apimix'),
     ]
