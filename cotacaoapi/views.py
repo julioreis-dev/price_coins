@@ -55,26 +55,26 @@ class DateViewSet(APIView):
         # return Response(serializer.data)
 
 
-# class MixViewSet(APIView):
-#     """
-#     This class return all register in database by coin and date
-#     :return:json
-#     """
-#     serializer_class = CotacaoSerializer
-#
-#     def get_object(self, name, date):
-#         try:
-#             return Cotacoes.objects.filter(coin=name, date=date).all()
-#         except Cotacoes.DoesNotExist:
-#             raise Http404
-#
-#     def get(self, request, name, date, format=None):
-#         mix = self.get_object(name, date)
-#         serializer = CotacaoSerializer(mix, many=True)
-#         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-
-class MixViewSet(viewsets.ModelViewSet):
-    queryset = Cotacoes.objects.all()
+class MixViewSet(APIView):
+    """
+    This class return all register in database by coin and date
+    :return:json
+    """
     serializer_class = CotacaoSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['coin', 'date']
+
+    def get_object(self, name, date):
+        try:
+            return Cotacoes.objects.filter(coin=name, date=date).all()
+        except Cotacoes.DoesNotExist:
+            raise Http404
+
+    def get(self, request, name, date, format=None):
+        mix = self.get_object(name, date)
+        serializer = CotacaoSerializer(mix, many=True)
+        return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
+
+# class MixViewSet(viewsets.ModelViewSet):
+#     queryset = Cotacoes.objects.all()
+#     serializer_class = CotacaoSerializer
+#     filter_backends = [DjangoFilterBackend]
+#     filterset_fields = ['coin', 'date']
